@@ -3,86 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Пхукет для тебя! 🌴</title>
+<title>Малыш 2–3 года · Пхукет из Карона</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-:root{
-  --yellow:#FFC93C;--orange:#FF8C42;--pink:#FF6F91;--teal:#2EC4B6;--purple:#9D65C9;
-  --green:#6BCB77;--sky:#4AC6EA;--ink:#1C3A3A;--paper:#FFFBF2;--card:#fff;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Fredoka',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
-h1,h2,h3,.disp{font-family:'Baloo 2',sans-serif;line-height:1.15}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
-section{padding:44px 0}
-/* squiggly bg dots */
-body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.5;
- background-image:radial-gradient(circle,#FFE8B0 3px,transparent 3.5px),radial-gradient(circle,#C8F0E8 3px,transparent 3.5px);
- background-size:64px 64px,64px 64px;background-position:0 0,32px 32px}
-/* topbar */
-.rolebar{background:#fff;position:sticky;top:0;z-index:80;box-shadow:0 4px 16px rgba(28,58,58,.1);border-bottom:4px solid var(--yellow)}
-.rolebar .wrap{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
-.rolebar a{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:600;font-size:13px;padding:8px 13px;border-radius:999px;white-space:nowrap;transition:.2s}
-.rolebar a:hover{background:#FFF3D6}
-.rolebar a.act{background:var(--orange);color:#fff}
-.rolebar .home{margin-right:auto;font-family:'Baloo 2';font-weight:800;color:var(--teal)}
-/* HERO */
-header{padding:40px 0 34px;text-align:center;position:relative}
-header .balloon{position:absolute;font-size:44px;opacity:.85;animation:float 5s ease-in-out infinite}
-header h1{font-size:clamp(30px,7vw,54px);font-weight:800;color:var(--orange);text-shadow:3px 3px 0 #FFE0B0}
-header p{font-size:18px;margin-top:14px;color:#3B5A5E;max-width:500px;margin-left:auto;margin-right:auto}
-@keyframes float{50%{transform:translateY(-14px) rotate(4deg)}}
-/* fun cards */
-.sec-head{text-align:center;margin-bottom:26px}
-.sec-head h2{font-size:clamp(24px,4.4vw,36px);color:var(--teal)}
-.sec-head p{color:#3B5A5E;font-size:16px;margin-top:6px}
-.fungrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.fcard{background:var(--card);border-radius:28px;padding:0;overflow:hidden;box-shadow:0 10px 26px rgba(28,58,58,.12);transition:transform .25s,box-shadow .25s;border:4px solid transparent}
-.fcard:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 18px 36px rgba(28,58,58,.18)}
-.fcard .cov{height:150px;background:linear-gradient(160deg,var(--sky),var(--teal));position:relative;display:flex;align-items:center;justify-content:center}
-.fcard .cov img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
-.fcard .cov.loaded img{opacity:1}
-.fcard .cov .emoji{font-size:52px;position:relative;z-index:2;filter:drop-shadow(0 4px 6px rgba(0,0,0,.2))}
-.fcard .body{padding:16px 18px 20px}
-.fcard h3{font-size:18px;color:var(--ink)}
-.fcard p{font-size:13.8px;color:#4F6E6E;margin-top:6px}
-.fcard .where{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;background:#FFF3D6;color:var(--orange);border-radius:999px;padding:4px 12px}
-/* animal strip */
-.animals{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory}
-.amini{flex:0 0 150px;scroll-snap-align:center;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 8px 20px rgba(28,58,58,.1);text-align:center}
-.amini .cov{height:110px;background:linear-gradient(160deg,var(--green),var(--teal));position:relative}
-.amini .cov img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
-.amini .cov.loaded img{opacity:1}
-.amini p{padding:10px 6px;font-weight:600;font-size:13.5px}
-/* rules — kid friendly */
-.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.rulec{border-radius:24px;padding:20px;color:#fff;position:relative;overflow:hidden}
-.rulec .emoji{font-size:38px;margin-bottom:8px;display:block}
-.rulec h3{font-size:17px;margin-bottom:4px}
-.rulec p{font-size:13.6px;opacity:.95}
-.r1{background:linear-gradient(150deg,#FF6F91,#FF8C42)}
-.r2{background:linear-gradient(150deg,#4AC6EA,#2EC4B6)}
-.r3{background:linear-gradient(150deg,#9D65C9,#6C5CE7)}
-.r4{background:linear-gradient(150deg,#6BCB77,#2EC4B6)}
-.r5{background:linear-gradient(150deg,#FFC93C,#FF8C42)}
-.r6{background:linear-gradient(150deg,#FF6F91,#9D65C9)}
-/* checklist / stickers */
-.checklist{background:var(--card);border-radius:28px;padding:22px;box-shadow:0 10px 26px rgba(28,58,58,.12)}
-.clist{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
-.citem{display:flex;align-items:center;gap:12px;background:#FFF9EC;border-radius:16px;padding:12px 14px;cursor:pointer;transition:.2s;border:2px solid transparent}
-.citem input{display:none}
-.citem .box{width:34px;height:34px;border-radius:10px;background:#fff;border:2.5px solid #E8DCC0;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:.2s}
-.citem input:checked ~ .box{background:var(--green);border-color:var(--green);color:#fff}
-.citem input:checked ~ span{text-decoration:line-through;opacity:.55}
-.citem:has(input:checked){background:#EAF9EC;border-color:var(--green)}
-.progress-wrap{background:#FFF3D6;border-radius:999px;height:16px;overflow:hidden;margin-top:16px}
-.progress-bar{height:100%;background:linear-gradient(90deg,var(--yellow),var(--orange));border-radius:999px;width:0%;transition:width .4s}
-.progress-txt{text-align:center;font-weight:600;margin-top:8px;color:var(--orange)}
-footer{text-align:center;padding:34px 20px;color:#7FA39C;font-size:13px}
-footer a{color:var(--teal);font-weight:600;text-decoration:none}
-@media(max-width:640px){section{padding:30px 0}}
+.pick{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.pick h3{font-size:15.5px;color:var(--sea);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.pick p{font-size:13.6px;color:#33504F}
+.pick .badge{font-family:'JetBrains Mono';font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.pick.ok .badge{background:#DFF3E6;color:#1E6B3A}
+.pick.caution .badge{background:#FDE7E3;color:#9B2C26}
+.daycard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.daycard .time{font-family:'JetBrains Mono';font-weight:700;color:var(--lagoon);font-size:13px;min-width:64px}
+.daycard h3{font-size:15px;color:var(--sea);margin-bottom:3px}
+.daycard p{font-size:13.5px;color:#33504F}
+.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.pack div{background:#fff;border:1px dashed var(--line);border-radius:14px;padding:12px;text-align:center;font-size:13px;color:var(--sea);font-weight:600}
+.pack div span{display:block;font-size:22px;margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -90,131 +28,116 @@ footer a{color:var(--teal);font-weight:600;text-decoration:none}
   <a class="home" href="index.html">🌴 Пхукет</a>
   <a href="phuket-guide-karon-2026.html">Гид</a>
   <a href="mama.html">🤍 Мама</a>
-  <a class="act" href="rebenok.html">🦖 Ребёнок</a>
+  <a class="act" href="rebenok.html">🦖 Малыш 2–3</a>
   <a href="voditel.html">🚗 Водитель</a>
   <a href="extrenno.html">🆘 Экстренно</a>
 </div></div>
 
-<header>
-  <span class="balloon" style="left:6%;top:10px;animation-delay:0s">🐠</span>
-  <span class="balloon" style="right:8%;top:30px;animation-delay:1.2s">🥥</span>
-  <span class="balloon" style="left:12%;bottom:-6px;animation-delay:2s">🐒</span>
-  <span class="balloon" style="right:14%;bottom:0;animation-delay:.6s">🦖</span>
-  <h1>Привет! Это твой остров 🌴</h1>
-  <p>Здесь живут слоны, рыбки-клоуны и очень вкусные манго. Смотри, что тебя ждёт!</p>
-</header>
+<header class="phero"><div class="phero-emoji">🦖</div><div class="wrap">
+  <div class="eyebrow">Для родителей тоддлера</div>
+  <h1>Малыш 2–3 года на Пхукете</h1>
+  <p class="lead">В этом возрасте важнее не «куда сводить», а как подстроить остров под тихий час, короткое внимание и любовь тащить в рот ракушки. Собрали, что реально заходит в 2–3 года, а что лучше отложить на потом.</p>
+</div></header>
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><h2>Куда пойти играть 🎢</h2><p>Выбери приключение на сегодня</p></div>
-    <div class="fungrid">
-      <div class="fcard"><div class="cov" data-cover="Andamanda water park Phuket"><span class="emoji">🌊</span></div><div class="body"><h3>Аквапарк Андаманда</h3><p>Огромные горки, солёный бассейн с волнами и целая тайская сказка вокруг!</p><span class="where">20 минут на машине</span></div></div>
-      <div class="fcard"><div class="cov" data-cover="Blue Tree Phuket lagoon"><span class="emoji">🤸</span></div><div class="body"><h3>Блю Три</h3><p>Прыгай в голубую лагуну, катайся на тарзанке и качелях над водой.</p><span class="where">40 минут на машине</span></div></div>
-      <div class="fcard"><div class="cov" data-cover="Dino Park mini golf Phuket"><span class="emoji">🦕</span></div><div class="body"><h3>Дино-парк</h3><p>Мини-гольф среди динозавров прямо у нас в Кароне — можно дойти пешком вечером!</p><span class="where">5 минут пешком</span></div></div>
-      <div class="fcard"><div class="cov" data-cover="aquarium fish tunnel"><span class="emoji">🐟</span></div><div class="body"><h3>Аквариум Aquaria</h3><p>Иди сквозь стеклянный тоннель прямо под акулами и скатами!</p><span class="where">30 минут, в Central</span></div></div>
-      <div class="fcard"><div class="cov" data-cover="elephant sanctuary bathing"><span class="emoji">🐘</span></div><div class="body"><h3>Слоновий приют</h3><p>Покорми слона бананом и облей его водой из ведра — слонам это очень нравится!</p><span class="where">30–40 минут</span></div></div>
-      <div class="fcard"><div class="cov" data-cover="Rawai Park Phuket kids"><span class="emoji">🎈</span></div><div class="body"><h3>Равай Парк</h3><p>Бассейн с пеной, батуты и шоу мыльных пузырей — целый день веселья.</p><span class="where">25 минут на машине</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section style="background:#EFFBF7">
-  <div class="wrap">
-    <div class="sec-head"><h2>Кого ты можешь встретить 🐾</h2><p>Листай вправо →</p></div>
-    <div class="animals">
-      <div class="amini"><div class="cov" data-cover="clownfish reef"></div><p>🐠 Рыбка-клоун</p></div>
-      <div class="amini"><div class="cov" data-cover="long tailed macaque Thailand"></div><p>🐒 Обезьянка</p></div>
-      <div class="amini"><div class="cov" data-cover="gibbon Phuket rehabilitation"></div><p>🐵 Гиббон</p></div>
-      <div class="amini"><div class="cov" data-cover="sea turtle Thailand"></div><p>🐢 Морская черепаха</p></div>
-      <div class="amini"><div class="cov" data-cover="hornbill bird Thailand"></div><p>🦜 Птица-носорог</p></div>
-      <div class="amini"><div class="cov" data-cover="starfish shallow water"></div><p>⭐ Морская звезда</p></div>
-      <div class="amini"><div class="cov" data-cover="Asian elephant"></div><p>🐘 Слонёнок</p></div>
-      <div class="amini"><div class="cov" data-cover="hermit crab beach"></div><p>🦀 Рак-отшельник</p></div>
+    <div class="sec-head"><span class="kicker">01 · особенности возраста</span><h2>Что держать в голове в 2–3 года</h2></div>
+    <div class="grid g3">
+      <div class="card"><h3>😴 Тихий час — святое</h3><p>Без сна после обеда истерика почти гарантирована к вечеру. Планируйте активности на утро и позднюю вторую половину дня, а 12:00–14:30 — дом/кондо.</p></div>
+      <div class="card"><h3>☀️ Перегрев быстрее, чем у взрослых</h3><p>Терморегуляция ещё незрелая — тепловой удар у малыша наступает быстрее и незаметнее. Тень, панама, вода каждые 20–30 минут, никаких «ещё 10 минут на солнце».</p></div>
+      <div class="card"><h3>👄 Всё тянет в рот</h3><p>Мелкие ракушки, камешки, кусочки коралла на пляже — потенциальная опасность подавиться. Проверяйте песочные «находки» малыша на ходу.</p></div>
+      <div class="card"><h3>🎢 Аттракционы для 5+, а не для 2</h3><p>Горки аквапарков, тарзанки, батуты — рассчитаны на детей постарше. Для 2–3 лет ищите отдельные детские/мелководные зоны, а не общий вход.</p></div>
+      <div class="card"><h3>🔋 Внимание — 20–30 минут</h3><p>Один «крупный» выезд в день — предел. Лучше короткая активность + свободная игра, чем насыщенная программа на весь день.</p></div>
+      <div class="card"><h3>🌊 Не боится воды — и это опасно</h3><p>В этом возрасте нет инстинкта страха перед морем. Рука на малыше в воде постоянно, даже на «безопасном» мелководье.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><h2>Правила моря 🌊</h2><p>Запомни — и море всегда будет другом</p></div>
-    <div class="rules">
-      <div class="rulec r1"><span class="emoji">🚩</span><h3>Красный флаг</h3><p>Если флаг красный — купаться нельзя! Море сегодня слишком сильное.</p></div>
-      <div class="rulec r2"><span class="emoji">🧜</span><h3>Плавай где мама видит</h3><p>Заходи в воду только там, где тебя видят взрослые — недалеко от берега.</p></div>
-      <div class="rulec r3"><span class="emoji">🎐</span><h3>Не трогай медуз</h3><p>Даже если медуза лежит на песке — она может ужалить. Смотри глазками, не руками.</p></div>
-      <div class="rulec r4"><span class="emoji">🩴</span><h3>Обувь для воды</h3><p>На камнях и ракушках надевай специальные тапочки — так не поранишь ножку.</p></div>
-      <div class="rulec r5"><span class="emoji">☀️</span><h3>Крем от солнца</h3><p>Солнце на Пхукете очень сильное — попроси маму намазать крем перед пляжем.</p></div>
-      <div class="rulec r6"><span class="emoji">🥥</span><h3>Не сиди под кокосом</h3><p>Кокосы падают! Расстилай коврик подальше от пальмы с орехами.</p></div>
+    <div class="sec-head"><span class="kicker">02 · куда пойти</span><h2>Что реально подходит по возрасту</h2>
+      <p>🟢 — хорошо заходит в 2–3 года · 🟠 — можно, но с оговоркой (читайте примечание)</p></div>
+    <div class="grid g2">
+      <div class="pick ok"><h3>🏖 Ката Ной / север Карона <span class="badge">🟢 топ-выбор</span></h3><p>Самый пологий вход в воду, минимум волн в высокий сезон. Копать песок, топать по мелководью, искать крабиков — то, что нужно в этом возрасте.</p></div>
+      <div class="pick ok"><h3>🌳 Парк у озера Най Харн <span class="badge">🟢 топ-выбор</span></h3><p>Тень, дорожки для самостоятельных прогулок, детская площадка рядом с пляжем — можно переключаться между водой и игрой без переезда.</p></div>
+      <div class="pick ok"><h3>🐟 Аквариум Aquaria (Central) <span class="badge">🟢 хорошо</span></h3><p>Кондиционер спасает от жары в разгар дня, тоннель под водой завораживает даже самых маленьких, ходить можно медленно и недолго.</p></div>
+      <div class="pick caution"><h3>🌊 Andamanda / аквапарки <span class="badge">🟠 только детская зона</span></h3><p>Основные горки — не для 2–3 лет. Едьте только ради отдельного мелкого детского бассейна, если он есть, и закладывайте от силы час.</p></div>
+      <div class="pick caution"><h3>🎈 Rawai Park (пена, батуты) <span class="badge">🟠 частично</span></h3><p>Батуты обычно рассчитаны на детей постарше и травмоопасны для малыша. Пенный бассейн — можно, но строго за руку и под присмотром.</p></div>
+      <div class="pick caution"><h3>🐘 Слоновий приют <span class="badge">🟠 по ребёнку</span></h3><p>Покормить с руки взрослого — можно и обычно очень нравится, но крупное животное вблизи иногда пугает малышей. Будьте готовы уйти раньше.</p></div>
+      <div class="pick ok"><h3>🦕 Dino Park — просто погулять <span class="badge">🟢 бесплатно смотреть</span></h3><p>Сама игра в мини-гольф малышу неинтересна и неудобна, а вот пройтись вдоль динозавров и сфотографироваться — 15 приятных минут пешком от Карона.</p></div>
+      <div class="pick caution"><h3>🤸 Blue Tree <span class="badge">🟠 только лагуна</span></h3><p>Тарзанки и высокие конструкции — не этот возраст. Спокойная зона голубой лагуны для купания подойдёт, если избегать основной активной части парка.</p></div>
     </div>
   </div>
 </section>
 
-<section style="background:#FFF6E9">
+<section>
   <div class="wrap">
-    <div class="sec-head"><h2>Собери все наклейки! ⭐</h2><p>Отметь, что уже успел сделать на острове</p></div>
-    <div class="checklist">
-      <div class="clist">
-        <label class="citem"><input type="checkbox" data-k="c1"><span class="box">🐘</span><span>Покормил слона</span></label>
-        <label class="citem"><input type="checkbox" data-k="c2"><span class="box">🌊</span><span>Скатился с горки в аквапарке</span></label>
-        <label class="citem"><input type="checkbox" data-k="c3"><span class="box">🐠</span><span>Увидел рыбку под водой</span></label>
-        <label class="citem"><input type="checkbox" data-k="c4"><span class="box">🦕</span><span>Сыграл в мини-гольф с динозаврами</span></label>
-        <label class="citem"><input type="checkbox" data-k="c5"><span class="box">🥭</span><span>Попробовал манго со стики-райсом</span></label>
-        <label class="citem"><input type="checkbox" data-k="c6"><span class="box">🏖️</span><span>Построил замок из песка</span></label>
-        <label class="citem"><input type="checkbox" data-k="c7"><span class="box">🌅</span><span>Посмотрел закат на мысе</span></label>
-        <label class="citem"><input type="checkbox" data-k="c8"><span class="box">🐒</span><span>Увидел настоящую обезьяну</span></label>
-        <label class="citem"><input type="checkbox" data-k="c9"><span class="box">🏮</span><span>Запустил фонарик (Лой Кратонг)</span></label>
-        <label class="citem"><input type="checkbox" data-k="c10"><span class="box">🎈</span><span>Попрыгал в бассейне с пеной</span></label>
-      </div>
-      <div class="progress-wrap"><div class="progress-bar" id="pbar"></div></div>
-      <div class="progress-txt" id="ptxt">Начни собирать наклейки!</div>
+    <div class="sec-head"><span class="kicker">03 · чем занять</span><h2>Простые игры, которые заходят на «ура»</h2></div>
+    <div class="grid g3">
+      <div class="card"><h3>🏰 Песок</h3><p>Формочки, «печём куличи», закапываем и откапываем ножки — полчаса чистого удовольствия без всякого инвентаря, кроме ведёрка.</p></div>
+      <div class="card"><h3>🐚 Охота за ракушками</h3><p>Собирать и складывать в ведёрко — отлично держит внимание. Просто проверяйте находки, прежде чем малыш решит попробовать их на вкус.</p></div>
+      <div class="card"><h3>🦀 Наблюдение за крабами</h3><p>На камнях у края пляжа в отлив — крабики-отшельники в изобилии. Смотреть и показывать пальцем интереснее в этом возрасте, чем трогать руками.</p></div>
+      <div class="card"><h3>🐠 Кормим рыбок</h3><p>На мелководье у камней рыбки подходят близко. Можно посмотреть без маски — восторга хватает и без снаряжения.</p></div>
+      <div class="card"><h3>✏️ Рисуем на песке</h3><p>Палочкой или пальцем — линии, круги, первые «буквы». Быстро надоедает — то, что нужно для 20-минутного внимания.</p></div>
+      <div class="card"><h3>💦 Переливаем воду</h3><p>Пластиковый стаканчик и тазик у кондо или мелкая лужица прибоя — бесконечная игра, которая всегда под рукой.</p></div>
     </div>
   </div>
 </section>
 
-<footer>Это часть большого гида «Пхукет из Карона» 🌴 · <a href="index.html">все страницы</a> · <a href="mama.html">страница для мамы</a></footer>
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">04 · режим дня</span><h2>Один день с малышом 2–3 лет</h2>
+      <p>Ориентир, не расписание — подстраивайте под сон и настроение конкретного ребёнка.</p></div>
+    <div class="grid" style="gap:12px">
+      <div class="daycard"><span class="time">7:30</span><div><h3>Пляж, пока прохладно</h3><p>Вода спокойная, солнце ещё щадит. 40–60 минут — обычно предел до первых признаков усталости.</p></div></div>
+      <div class="daycard"><span class="time">9:30</span><div><h3>Завтрак и свободная игра</h3><p>Дома или в кафе с детским стулом — Sunny Cafe и подобные места легко меняют состав блюда под малыша.</p></div></div>
+      <div class="daycard"><span class="time">12:00–14:30</span><div><h3>Тихий час</h3><p>Обязательная часть дня, а не опция. Затемнённая штора в кондо сильно помогает уснуть в жару.</p></div></div>
+      <div class="daycard"><span class="time">15:30</span><div><h3>Короткая прогулка или площадка</h3><p>30–40 минут — площадка у озера Най Харн, двор кондо или просто прогулка по сою. Больше — уже на пределе внимания.</p></div></div>
+      <div class="daycard"><span class="time">17:00</span><div><h3>Вода без задач</h3><p>Тазик, лужица, душ во дворе — можно и без выезда куда-то специально, малышу важнее сам процесс, а не место.</p></div></div>
+      <div class="daycard"><span class="time">18:00</span><div><h3>Ранний ужин</h3><p>Кухня в этом возрасте капризная — держите пару проверенных блюд под рукой (рис, лапша, фрукты) даже в незнакомом кафе.</p></div></div>
+    </div>
+  </div>
+</section>
 
-<script>
-const CACHE={};
-async function commons(q,limit=3){
-  const key=q+'|'+limit;
-  if(CACHE[key])return CACHE[key];
-  try{
-    const u='https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*'
-      +'&generator=search&gsrnamespace=6&gsrlimit='+limit
-      +'&gsrsearch='+encodeURIComponent(q)
-      +'&prop=imageinfo&iiprop=url&iiurlwidth=700';
-    const d=await(await fetch(u)).json();
-    const pages=Object.values((d.query&&d.query.pages)||{});
-    pages.sort((a,b)=>(a.index||0)-(b.index||0));
-    const items=pages.map(p=>p.imageinfo&&p.imageinfo[0]).filter(Boolean)
-      .filter(i=>/\.(jpe?g)$/i.test(i.url||'')).map(i=>i.thumburl||i.url);
-    CACHE[key]=items;return items;
-  }catch(e){return[]}
-}
-document.querySelectorAll('[data-cover]').forEach(async el=>{
-  const items=await commons(el.dataset.cover,3);
-  if(!items.length)return;
-  const img=document.createElement('img');img.loading='lazy';img.alt='';
-  img.onload=()=>el.classList.add('loaded');
-  img.src=items[0];
-  el.appendChild(img);
-});
-/* чек-лист со звёздочками, сохраняется локально если получится */
-const boxes=[...document.querySelectorAll('.citem input')];
-function loadState(){try{return JSON.parse(localStorage.getItem('phuket_kid_checklist')||'{}')}catch(e){return{}}}
-function saveState(s){try{localStorage.setItem('phuket_kid_checklist',JSON.stringify(s))}catch(e){}}
-let state=loadState();
-boxes.forEach(b=>{if(state[b.dataset.k])b.checked=true;});
-function update(){
-  const done=boxes.filter(b=>b.checked).length;
-  const pct=Math.round(done/boxes.length*100);
-  document.getElementById('pbar').style.width=pct+'%';
-  const t=document.getElementById('ptxt');
-  t.textContent = done===0 ? 'Начни собирать наклейки!' : done===boxes.length ? '🎉 Все наклейки собраны — ты герой Пхукета!' : done+' из '+boxes.length+' — так держать!';
-}
-boxes.forEach(b=>b.addEventListener('change',()=>{
-  state[b.dataset.k]=b.checked;saveState(state);update();
-}));
-update();
-</script>
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">05 · безопасность</span><h2>На что обратить внимание именно в 2–3 года</h2></div>
+    <div class="grid g2">
+      <div class="callout co-alert"><b>Тепловой перегрев наступает быстро</b> Горячая кожа, вялость, отказ от еды/воды, необычная сонливость — сразу в тень, снять лишнее, обтереть прохладной водой. Не ждите явных признаков — уводите с солнца профилактически, не дожидаясь жалоб (малыш ещё не умеет их формулировать).</div>
+      <div class="callout co-warn"><b>Горячий песок и асфальт</b> Босые ножки обжигаются о раскалённый песок и плитку у бассейна в середине дня — аквашузы нужны даже там, где взрослому кажется, что и так нормально.</div>
+      <div class="callout co-warn"><b>Мелкие предметы и кораллы</b> Ракушки, камешки, кусочки коралла — риск подавиться, если малыш тянет находку в рот. Проверяйте «улов» на ходу, не оставляйте песочный набор без присмотра.</div>
+      <div class="callout co-alert"><b>Вода — рука всегда на ребёнке</b> Даже 10–15 см глубины на мелководье достаточно, если малыш упадёт лицом вниз и растеряется. Инстинкта страха воды в этом возрасте ещё нет — контроль на 100% ваш.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">06 · еда, сон, аптечка</span><h2>Бытовые мелочи, которые экономят нервы</h2></div>
+    <div class="grid g3">
+      <div class="card"><h3>🍚 Еда</h3><ul><li>Детские стулья есть почти везде — уточняйте при входе</li><li>Рис, лапша без специй, фрукты — рабочий минимум в любом кафе</li><li>Пюре и специализированное детское питание — в Boots/Watsons и супермаркетах</li></ul></div>
+      <div class="card"><h3>💊 Аптечка</h3><ul><li>Детский парацетамол по возрастной дозировке — в любой аптеке, но привезите свой градусник</li><li>Регидрон/аптечный аналог — на случай жары или расстройства желудка</li><li>Репеллент, разрешённый с раннего возраста — на вечерние прогулки (профилактика денге)</li></ul></div>
+      <div class="card"><h3>🛏 Сон и адаптация</h3><ul><li>Первые 2–3 дня — режим может сбиться из-за перелёта и жары, закладывайте запас по времени</li><li>Плотные шторы в кондо сильно облегчают тихий час и ранний рассвет</li><li>Знакомая игрушка/плед из дома помогает быстрее освоиться на новом месте</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">07 · собрать сумку</span><h2>Что взять на прогулку с малышом 2–3</h2></div>
+    <div class="pack">
+      <div><span>🧴</span>SPF 50+ детский, наносить каждые 2 часа</div>
+      <div><span>👒</span>Панама с полями — козырёк не спасает шею</div>
+      <div><span>🩴</span>Аквашузы — горячий песок и камни</div>
+      <div><span>⛱</span>Своя тень: зонт или палатка</div>
+      <div><span>🍌</span>Перекус и вода — голодный тоддлер быстро срывается</div>
+      <div><span>🧸</span>Любимая игрушка — для тихого часа вне дома</div>
+      <div><span>🧻</span>Влажные салфетки — после песка и еды</div>
+      <div><span>🩹</span>Пластыри и антисептик на мелкие ссадины</div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Часть большого гида «Пхукет из Карона» · <a href="index.html" style="color:#fff">все страницы</a> · пляжи и педиатрия — на <a href="mama.html" style="color:#fff">странице для мамы</a> · экстренные номера — на <a href="extrenno.html" style="color:#fff">странице SOS</a></div></footer>
 </body>
 </html>
