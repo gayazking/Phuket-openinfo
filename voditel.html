@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для водителя · Пхукет из Карона</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.rule{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;align-items:flex-start}
+.rule .n{font-family:'Unbounded';font-weight:900;color:var(--papaya);font-size:22px;min-width:34px}
+.rule h3{font-size:15px;color:var(--sea);margin-bottom:3px}
+.rule p{font-size:13.6px;color:#33504F}
+.calc{background:linear-gradient(165deg,#062F36,#0B4750);color:#E4F3F0;border-radius:22px;padding:26px;outline:1px solid rgba(255,255,255,.12)}
+.calc h3{color:#fff;font-size:17px;margin-bottom:4px}
+.calc .sub{color:#A6CEC8;font-size:13px;margin-bottom:18px}
+.calc .row{display:grid;grid-template-columns:1fr 130px;gap:12px;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.16)}
+.calc label{font-size:13.5px}
+.calc label small{display:block;color:#8FBDB7;font-size:11px}
+.calc input[type=range]{width:100%;accent-color:var(--papaya)}
+.calc .val{font-family:'JetBrains Mono';font-size:12.5px;text-align:right;color:var(--papaya);font-weight:600}
+.calc .total{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-top:16px;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 18px}
+.calc .total b{font-family:'Unbounded';font-size:22px;color:var(--papaya)}
+.calc .total span{font-size:12px;color:#A6CEC8;display:block}
+</style>
+</head>
+<body>
+<div class="rolebar"><div class="wrap">
+  <a class="home" href="index.html">🌴 Пхукет</a>
+  <a href="index.html">Гид</a>
+  <a href="mama.html">🤍 Мама</a>
+  <a href="rebenok.html">🦖 Ребёнок</a>
+  <a class="act" href="voditel.html">🚗 Водитель</a>
+  <a href="extrenno.html">🆘 Экстренно</a>
+</div></div>
+
+<header class="phero"><div class="phero-emoji">🚗</div><div class="wrap">
+  <div class="eyebrow">Левый руль, левая полоса, правая привычка</div>
+  <h1>Страница для водителя</h1>
+  <p class="lead">Всё для машины: правила, серпантины, парковки, штрафы, заправки и что делать, если случилось ДТП. Держите открытой в закладках.</p>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">01 · база</span><h2>10 правил, которые реально нужны</h2></div>
+    <div class="grid" style="gap:12px">
+      <div class="rule"><span class="n">01</span><div><h3>Левостороннее движение</h3><p>Руль справа, полосы зеркальные. Привыкание — 1–2 дня, первые поездки лучше днём и по знакомым дорогам.</p></div></div>
+      <div class="rule"><span class="n">02</span><div><h3>МВУ — обязательны</h3><p>Без международных прав штраф 500–1000 ฿ при остановке и проблемы со страховой при ДТП, даже если вы не виноваты.</p></div></div>
+      <div class="rule"><span class="n">03</span><div><h3>Поворот налево на красный</h3><p>Разрешён, если уступаете абсолютно всем участникам движения — и машинам, и байкам.</p></div></div>
+      <div class="rule"><span class="n">04</span><div><h3>Серпантины — на пониженной</h3><p>Карон–Патонг, дорога к Большому Будде: включайте режим L/S на CVT при спуске, не тормозите постоянно колодками.</p></div></div>
+      <div class="rule"><span class="n">05</span><div><h3>После дождя — дистанция ×2</h3><p>Асфальт становится скользким за считанные минуты, особенно на серпантинах и разметке.</p></div></div>
+      <div class="rule"><span class="n">06</span><div><h3>Байкеры — тройной чек зеркал</h3><p>Много неопытных туристов на скутерах, перестраиваются без сигналов. Держите дистанцию при обгоне.</p></div></div>
+      <div class="rule"><span class="n">07</span><div><h3>Автокресло ребёнку</h3><p>Бронируйте у прокатчика заранее или ищите б/у в чатах зимовщиков (~1500 ฿), если не входит в аренду.</p></div></div>
+      <div class="rule"><span class="n">08</span><div><h3>Телефон за рулём — камеры ловят</h3><p>Используйте держатель и голосовую навигацию, штрафы выписывают по камерам без остановки.</p></div></div>
+      <div class="rule"><span class="n">09</span><div><h3>Только бензин, не газ</h3><p>Прокатные машины заправляются бензином (95 gasohol ~38–42 ฿/л). Заправки PTT/Shell по всему острову.</p></div></div>
+      <div class="rule"><span class="n">10</span><div><h3>Скорость потока — 50–70 км/ч</h3><p>Тайцы ездят спокойно, лихачить незачем — дороги узкие, а полиция штрафует за превышение на камеры.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">02 · парковка</span><h2>Как читать разметку и не попасть на эвакуатор</h2></div>
+    <div class="grid g3">
+      <div class="card"><h3>🔴 Красно-белый бордюр</h3><p>Парковка запрещена. Штраф 500–2000 ฿ + «башмак» на колесо (снимают после оплаты в участке) или эвакуация — особенно часто в Патонге.</p></div>
+      <div class="card"><h3>🟡 Жёлто-белый бордюр</h3><p>Места для такси и тук-туков — не занимать даже на 2 минуты.</p></div>
+      <div class="card"><h3>⚪ Без разметки и знаков</h3><p>Обычно можно — ориентируйтесь на местные машины: если тайцы паркуются, можно и вам.</p></div>
+      <div class="card"><h3>🥥 Не под деревьями</h3><p>Упавший кокос или джекфрут реально пробивает крышу — страховка не всегда покрывает такие случаи без спора.</p></div>
+      <div class="card"><h3>🏬 Моллы и супермаркеты</h3><p>Бесплатно первые 2–3 часа (Central, Jungceylon, Big C, Lotus's) — берите чек на въезде.</p></div>
+      <div class="card"><h3>🏖 Пляжи</h3><p>Большинство бесплатны и просторны (Карон, Най Харн, Банг Тао). Платные: Сурин ~100 ฿, юг местами 20–40 ฿.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">03 · маршруты</span><h2>Расстояния и время из Карона</h2></div>
+    <div class="tbl-scroll"><table class="tbl">
+      <tr><th>Куда</th><th>Время</th><th>Особенность дороги</th></tr>
+      <tr><td>Ката / Ката Ной</td><td class="mono">5–8 мин</td><td>Один подъём через холм, несложно</td></tr>
+      <tr><td>Кольцо Чалонг</td><td class="mono">15 мин</td><td>Ровно, в час пик — затор на кольце</td></tr>
+      <tr><td>Патонг</td><td class="mono">15–20 мин</td><td>Серпантин Карон–Патонг — узкие повороты, обгон опасен</td></tr>
+      <tr><td>Най Харн / Промтеп</td><td class="mono">20–25 мин</td><td>Спокойная дорога, парковки просторные</td></tr>
+      <tr><td>Пхукет-таун</td><td class="mono">30–35 мин</td><td>Ровная трасса, вечером — пробки у въезда в город</td></tr>
+      <tr><td>Банг Тао / Лагуна</td><td class="mono">40–50 мин</td><td>Через центр острова, обычно свободно</td></tr>
+      <tr><td>Большой Будда</td><td class="mono">20 мин</td><td>Крутой серпантин наверх — держите передачу пониже</td></tr>
+      <tr><td>Аэропорт HKT</td><td class="mono">45–60 мин</td><td>+30–40 мин запаса в праздники и час пик</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">04 · калькулятор</span><h2>Сколько уйдёт на бензин в месяц</h2></div>
+    <div class="calc">
+      <h3>⛽ Расход топлива</h3>
+      <p class="sub">Средний расход ~7 л/100 км, цена ~40 ฿/л — подвиньте пробег.</p>
+      <div class="row"><label>Пробег в месяц <small>км</small></label><div><input type="range" id="vKm" min="200" max="3000" step="50" value="900"><div class="val" id="vvKm"></div></div></div>
+      <div class="row"><label>Цена бензина <small>฿/л</small></label><div><input type="range" id="vPrice" min="35" max="46" step="0.5" value="40"><div class="val" id="vvPrice"></div></div></div>
+      <div class="row"><label>Расход авто <small>л/100 км</small></label><div><input type="range" id="vCons" min="5" max="10" step="0.5" value="7"><div class="val" id="vvCons"></div></div></div>
+      <div class="total"><div><span>Бензин в месяц</span><b id="vTotal">—</b></div><div><span>Литров нужно</span><b id="vLiters">—</b></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">05 · если случилось</span><h2>ДТП: пошагово</h2></div>
+    <div class="grid" style="gap:12px">
+      <div class="rule"><span class="n">1</span><div><h3>Не двигайте машину</h3><p>Если никто не пострадал серьёзно и ситуация безопасна — оставьте авто как есть до приезда полиции, это важно для страховки.</p></div></div>
+      <div class="rule"><span class="n">2</span><div><h3>Фото и видео сразу</h3><p>Снимите обе машины со всех сторон, номера, положение на дороге, повреждения — до того, как что-то передвинут.</p></div></div>
+      <div class="rule"><span class="n">3</span><div><h3>Позвоните в страховую проката</h3><p>Номер должен быть в договоре аренды — обычно приезжают на место сами и всё оформляют.</p></div></div>
+      <div class="rule"><span class="n">4</span><div><h3>При пострадавших — 1669</h3><p>Скорая помощь. При серьёзном ДТП вызывайте и полицию 191 — нужен официальный протокол для страховки.</p></div></div>
+      <div class="rule"><span class="n">5</span><div><h3>Не подписывайте документы на тайском без перевода</h3><p>Просите переводчика или звоните в тур-полицию 1155 — они помогают именно в таких ситуациях.</p></div></div>
+    </div>
+    <div class="callout co-warn" style="margin-top:16px"><b>Мелкое ДТП с байком</b> Часто предлагают решить на месте наличными — это ваше право согласиться или нет. Если сомневаетесь в сумме или виновности — зовите тур-полицию 1155, они говорят по-английски и часто выступают медиатором.</div>
+  </div>
+</section>
+
+<footer><div class="wrap">Часть большого гида «Пхукет из Карона» · <a href="index.html" style="color:#fff">все страницы</a> · полная памятка ДТП и номера — на <a href="extrenno.html" style="color:#fff">странице SOS</a></div></footer>
+
+<script>
+(function(){
+  const f=n=>n.toLocaleString('ru-RU');
+  const el=id=>document.getElementById(id);
+  function calc(){
+    const km=+el('vKm').value,price=+el('vPrice').value,cons=+el('vCons').value;
+    el('vvKm').textContent=f(km)+' км';
+    el('vvPrice').textContent=price+' ฿/л';
+    el('vvCons').textContent=cons+' л/100км';
+    const liters=km*cons/100;
+    el('vTotal').textContent='฿ '+f(Math.round(liters*price));
+    el('vLiters').textContent=Math.round(liters)+' л';
+  }
+  ['Km','Price','Cons'].forEach(i=>el('v'+i).addEventListener('input',calc));
+  calc();
+})();
+</script>
+</body>
+</html>
