@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Экстренные ситуации · Пхукет из Карона</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--coral:#FF6B6B}
+.sosbar{background:linear-gradient(120deg,#7C2222,#9B2C26);color:#fff;text-align:center;padding:10px 16px;font-family:'JetBrains Mono';font-size:13px;font-weight:700;letter-spacing:.03em}
+.sosbar b{color:#FFD9D9}
+.numgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.numcard{background:#fff;border:2px solid var(--line);border-radius:18px;padding:18px;text-align:center;transition:transform .2s}
+.numcard.crit{border-color:var(--coral);background:#FFF3F2}
+.numcard .big{font-family:'Unbounded';font-weight:900;font-size:30px;color:var(--sea)}
+.numcard.crit .big{color:var(--coral)}
+.numcard h3{font-size:13.5px;margin-top:6px;color:var(--sea)}
+.numcard p{font-size:12px;color:#5E7C7B;margin-top:3px}
+.scenario{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:14px}
+.scenario summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;gap:14px;font-family:'Unbounded';font-size:15.5px;color:var(--sea);font-weight:700}
+.scenario summary::-webkit-details-marker{display:none}
+.scenario summary .ico{font-size:24px}
+.scenario summary .arrow{margin-left:auto;font-size:18px;color:var(--lagoon);transition:transform .25s}
+.scenario[open] summary .arrow{transform:rotate(90deg)}
+.scenario .body{padding:0 22px 22px 60px}
+.steps{counter-reset:st}
+.step{position:relative;padding:0 0 14px 30px;font-size:14.3px;color:#33504F}
+.step::before{counter-increment:st;content:counter(st);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--sea);color:#fff;font-family:'JetBrains Mono';font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.scenario.crit .step::before{background:var(--coral)}
+.dono{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;font-size:13px}
+.dono .yes,.dono .no{border-radius:10px;padding:8px 12px}
+.dono .yes{background:#E3F3EE;color:#174D45}
+.dono .no{background:#FBE5E4;color:#7C2222}
+.dono b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+</style>
+</head>
+<body>
+<div class="sosbar">🆘 Жизнеугрожающая ситуация — сразу звоните <b>1669</b> (скорая) или <b>191</b> (полиция). Эта страница помогает действовать, пока едет помощь.</div>
+<div class="rolebar"><div class="wrap">
+  <a class="home" href="index.html">🌴 Пхукет</a>
+  <a href="index.html">Гид</a>
+  <a href="mama.html">🤍 Мама</a>
+  <a href="rebenok.html">🦖 Ребёнок</a>
+  <a href="voditel.html">🚗 Водитель</a>
+  <a class="act" href="extrenno.html">🆘 Экстренно</a>
+</div></div>
+
+<header class="phero" style="background:linear-gradient(160deg,#4A1414,#7C2222 55%,#9B2C26 130%)"><div class="phero-emoji">🆘</div><div class="wrap">
+  <div class="eyebrow" style="color:#FFB3B3">Коротко и по делу</div>
+  <h1>Экстренные ситуации и действия</h1>
+  <p class="lead" style="color:#FFE0E0">Все номера в одном месте плюс пошаговые инструкции на самые частые случаи в Таиланде: море, здоровье, дорога, документы. Сохраните страницу офлайн заранее.</p>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">01 · номера</span><h2>Сохраните в телефон прямо сейчас</h2></div>
+    <div class="numgrid">
+      <div class="numcard crit"><div class="big">1669</div><h3>Скорая помощь</h3><p>Медицинская экстренная служба, есть англоговорящие</p></div>
+      <div class="numcard crit"><div class="big">191</div><h3>Полиция</h3><p>Общая, авария/преступление в моменте</p></div>
+      <div class="numcard"><div class="big">1155</div><h3>Тур-полиция</h3><p>24/7 на английском — первый звонок почти во всём</p></div>
+      <div class="numcard"><div class="big">199</div><h3>Пожарные</h3><p>Пожар, серьёзное задымление</p></div>
+      <div class="numcard"><div class="big">1367</div><h3>Токсикология</h3><p>Ramathibodi Poison Center, если что-то проглотили/отравление</p></div>
+      <div class="numcard"><div class="big">1784</div><h3>Стихийные бедствия</h3><p>Штормовые предупреждения, цунами-хотлайн</p></div>
+      <div class="numcard"><div class="big">1178</div><h3>Иммиграция</h3><p>Вопросы визы, овербукинг по сроку пребывания</p></div>
+      <div class="numcard"><div class="big">112</div><h3>Универсальный</h3><p>С любого мобильного, если не уверены, куда звонить</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card"><h3>🏥 Госпитали (звонить напрямую)</h3><ul>
+        <li><b>Bangkok Hospital Phuket</b> — +66 76 254 425 (топ, дорого, детское отделение)</li>
+        <li><b>Siriroj International</b> — +66 76 361 888 (баланс цена/качество)</li></ul></div>
+      <div class="card"><h3>🇷🇺 Консульство России на Пхукете</h3><p>63/501 Moo 2, Thepkasattri Rd, Koh Kaew — <span class="mono">+66 95 259 80 81</span> (в т.ч. экстренная связь), пн–пт 9:00–13:00 по записи.</p><p style="margin-top:6px;font-size:12.5px;color:#5E7C7B">Утеря паспорта, арест, серьёзные проблемы — обращаться сюда или в посольство в Бангкоке.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">02 · сценарии</span><h2>Что делать по шагам</h2>
+      <p>Разверните нужную ситуацию. Это общая информация для первых минут — не замена вызову скорой и осмотру врача.</p></div>
+
+    <details class="scenario crit">
+      <summary><span class="ico">🌊</span>Тонет человек / затянуло течением<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">Кричите «спасатель!» / «lifeguard!» и машите руками — на людных пляжах (Карон, Патонг, Ката) есть посты со спасателями.</div>
+        <div class="step">Сами в воду за тонущим — только если умеете и есть чем помочь удержаться на плаву (доска, круг, пустая бутылка). Обратное течение выматывает и второго человека.</div>
+        <div class="step">Если тянет течением вас самих: не плывите против него. Плывите параллельно берегу, пока не выйдете из полосы течения, потом — к берегу по диагонали.</div>
+        <div class="step">После того как человек на берегу: звоните 1669, даже если кажется, что всё обошлось — возможен отложенный отёк лёгких («сухое утопление»).</div>
+      </div></div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🎐</span>Укус медузы<span class="arrow">›</span></summary>
+      <div class="body">
+        <p style="font-size:13.5px;color:#33504F;margin-bottom:10px">Протокол отличается для разных видов — главное правило: <b>не трогать голыми руками и не тереть</b>.</p>
+        <div class="steps">
+          <div class="step">Спокойно выйдите из воды — паника ускоряет разнос яда.</div>
+          <div class="step">Уберите видимые щупальца пинцетом, краем карты или в перчатках — никогда голой рукой.</div>
+          <div class="step"><b>Обычная медуза / бокс-медуза (жжёт сильно):</b> лейте уксус на место минимум 30 секунд.<br><b>Португальский кораблик (сине-фиолетовый «пузырь»):</b> уксус НЕ использовать — только промыть морской водой.</div>
+          <div class="step">После уксуса (если применяли) — погружение в горячую воду 40–45°C на 20–40 минут снимает боль.</div>
+          <div class="step">Тошнота, слабость, боль в груди, трудности с дыханием — это системная реакция, звоните 1669 немедленно.</div>
+        </div>
+        <div class="dono">
+          <div class="no"><b>Никогда</b>Пресная вода на месте укуса, тереть песком, спирт, лёд без ткани, «народные» методы</div>
+          <div class="yes"><b>Всегда</b>Уксус (кроме кораблика), горячая вода, врач при сильной реакции</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🩸</span>Порез о кораллы или ракушку<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">Промойте рану чистой пресной водой сразу — во влажном климате инфекция развивается быстро.</div>
+        <div class="step">Удалите видимые кусочки коралла/ракушки пинцетом, обработайте антисептиком.</div>
+        <div class="step">Закройте сухой повязкой, меняйте раз в день, следите за покраснением вокруг раны.</div>
+        <div class="step">Рана не заживает 2–3 дня, появился отёк или гной — к врачу, местные инфекции лечатся антибиотиком.</div>
+      </div></div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🦟</span>Подозрение на лихорадку денге<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">Признаки: высокая температура без насморка/кашля, сильная головная и суставная боль, иногда сыпь — через 4–7 дней после укуса комара.</div>
+        <div class="step">До анализа — только парацетамол. <b>Не давайте ибупрофен и аспирин</b> — при денге они повышают риск кровотечения.</div>
+        <div class="step">Обратитесь в клинику для анализа крови (тромбоциты, экспресс-тест на денге) — можно в Siriroj или Bangkok Hospital.</div>
+        <div class="step">Много жидкости, покой. Резкое ухудшение на 3–5 день (боль в животе, кровоточивость, вялость) — это повод для срочной госпитализации.</div>
+      </div></div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🤢</span>Пищевое отравление<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">Регидратация — вода с солью/сахаром или аптечный регидрон малыми порциями каждые 15 минут.</div>
+        <div class="step">Взрослому — можно переждать дома 12–24 часа при лёгких симптомах.</div>
+        <div class="step">Ребёнку, при высокой температуре, крови в стуле, признаках обезвоживания (сухость во рту, редкое мочеиспускание, вялость) — сразу к врачу.</div>
+        <div class="step">Не проходит больше суток или сильная слабость — Siriroj/Bangkok Hospital, капельница решает вопрос быстро.</div>
+      </div></div>
+    </details>
+
+    <details class="scenario crit">
+      <summary><span class="ico">🧒</span>Потерялся ребёнок<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">Не бегайте хаотично — сначала быстро осмотрите ближайший радиус (туалеты, вода, ближайшие ларьки), громко зовите по имени.</div>
+        <div class="step">На пляже — сразу к посту спасателей, у них есть громкая связь и протокол поиска.</div>
+        <div class="step">В торговом центре — на ресепшен/охране, объявление по громкой связи с приметами и одеждой работает быстро.</div>
+        <div class="step">Если за 10–15 минут не нашли — звоните 1155 (тур-полиция, английский 24/7) и 191.</div>
+        <div class="step">Заранее: договоритесь с ребёнком о «точке сбора», сфотографируйте, во что одет, перед выходом из дома.</div>
+      </div></div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🚗</span>Авария на дороге<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">Не двигайте машины, если никто серьёзно не пострадал — положение важно для страховки.</div>
+        <div class="step">Фото/видео обеих машин, номеров, повреждений, дорожной разметки.</div>
+        <div class="step">Есть пострадавшие — 1669, затем 191 для протокола.</div>
+        <div class="step">Звоните в страховую компанию проката — номер в договоре аренды, обычно приезжают на место сами.</div>
+        <div class="step">Не подписывайте документы на тайском без перевода — зовите 1155 как медиатора.</div>
+      </div>
+      <p style="margin-top:10px;font-size:12.5px"><a class="gmap" href="voditel.html">🚗 Подробный разбор ДТП — на странице водителя</a></p></div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🛂</span>Украли или потеряли паспорт<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">При краже — сначала в ближайший участок или Тур-полицию (1155) за официальным протоколом (bai raeng khwam), он нужен и консульству, и авиакомпании.</div>
+        <div class="step">Затем — в консульство России на Пхукете (63/501 Moo 2, Thepkasattri Rd, тел. +66 95 259 80 81) для оформления справки на возвращение или нового загранпаспорта.</div>
+        <div class="step">Параллельно заблокируйте банковские карты, если пропал и кошелёк.</div>
+        <div class="step">Держите скан паспорта в облаке заранее — сильно ускоряет процесс.</div>
+      </div></div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🥵</span>Тепловой удар<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">Признаки: горячая сухая кожа, спутанность сознания, головокружение, тошнота, иногда прекращение потоотделения — это опаснее обычного перегрева.</div>
+        <div class="step">Немедленно в тень или кондиционируемое помещение, снять лишнюю одежду.</div>
+        <div class="step">Обмахивать, обтирать прохладной (не ледяной) водой, лёд через ткань на шею/подмышки/пах.</div>
+        <div class="step">В сознании — давать пить маленькими глотками. Спутанность, потеря сознания, судороги — это 1669 немедленно.</div>
+      </div></div>
+    </details>
+
+    <details class="scenario">
+      <summary><span class="ico">🌪</span>Штормовое предупреждение / цунами<span class="arrow">›</span></summary>
+      <div class="body"><div class="steps">
+        <div class="step">После цунами 2004 года на западном побережье установлена система сирен и знаков эвакуации — обращайте внимание на жёлто-синие таблички «Tsunami Evacuation Route» на пляжах.</div>
+        <div class="step">Сирена или резкий отход воды от берега (море вдруг «убегает» далеко) — не фотографируйте, немедленно уходите вглубь острова, к возвышенности.</div>
+        <div class="step">Следите за 1784 (горячая линия стихийных бедствий) и локальными новостями/уведомлениями от отеля.</div>
+        <div class="step">Сильный ливень с ветром — держитесь подальше от деревьев и линий электропередач, за руль в такую погоду лучше не садиться.</div>
+      </div></div>
+    </details>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">03 · профилактика</span><h2>Что сделать заранее, чтобы этого не понадобилось</h2></div>
+    <div class="grid g3">
+      <div class="card"><h3>📋 Документы</h3><ul><li>Скан паспорта, визы, страховки — в облаке</li><li>Номер страховой компании — в заметках телефона</li><li>МВУ у обоих родителей</li></ul></div>
+      <div class="card"><h3>📱 В телефоне</h3><ul><li>Все номера с этой страницы — в избранном</li><li>Оффлайн-карта района (Google Maps → скачать офлайн)</li><li>Адрес консульства и ближайшего госпиталя</li></ul></div>
+      <div class="card"><h3>🎒 С собой на пляж/в поездку</h3><ul><li>Бутылка с водой (можно вместо неё — уксус на дальних пляжах без спасателей)</li><li>Пластыри, антисептик, парацетамол</li><li>Репеллент от комаров — профилактика денге лучше лечения</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Часть большого гида «Пхукет из Карона» · <a href="index.html" style="color:#fff">все страницы</a><br><br>Эта страница — общая информация для первых минут, собранная из открытых источников (2026), и не заменяет консультацию врача или инструкции экстренных служб. При любом сомнении в тяжести ситуации звоните 1669 или 1155.</div></footer>
+</body>
+</html>

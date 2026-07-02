@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пхукет для тебя! 🌴</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#FFC93C;--orange:#FF8C42;--pink:#FF6F91;--teal:#2EC4B6;--purple:#9D65C9;
+  --green:#6BCB77;--sky:#4AC6EA;--ink:#1C3A3A;--paper:#FFFBF2;--card:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Fredoka',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+h1,h2,h3,.disp{font-family:'Baloo 2',sans-serif;line-height:1.15}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+section{padding:44px 0}
+/* squiggly bg dots */
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.5;
+ background-image:radial-gradient(circle,#FFE8B0 3px,transparent 3.5px),radial-gradient(circle,#C8F0E8 3px,transparent 3.5px);
+ background-size:64px 64px,64px 64px;background-position:0 0,32px 32px}
+/* topbar */
+.rolebar{background:#fff;position:sticky;top:0;z-index:80;box-shadow:0 4px 16px rgba(28,58,58,.1);border-bottom:4px solid var(--yellow)}
+.rolebar .wrap{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.rolebar a{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:600;font-size:13px;padding:8px 13px;border-radius:999px;white-space:nowrap;transition:.2s}
+.rolebar a:hover{background:#FFF3D6}
+.rolebar a.act{background:var(--orange);color:#fff}
+.rolebar .home{margin-right:auto;font-family:'Baloo 2';font-weight:800;color:var(--teal)}
+/* HERO */
+header{padding:40px 0 34px;text-align:center;position:relative}
+header .balloon{position:absolute;font-size:44px;opacity:.85;animation:float 5s ease-in-out infinite}
+header h1{font-size:clamp(30px,7vw,54px);font-weight:800;color:var(--orange);text-shadow:3px 3px 0 #FFE0B0}
+header p{font-size:18px;margin-top:14px;color:#3B5A5E;max-width:500px;margin-left:auto;margin-right:auto}
+@keyframes float{50%{transform:translateY(-14px) rotate(4deg)}}
+/* fun cards */
+.sec-head{text-align:center;margin-bottom:26px}
+.sec-head h2{font-size:clamp(24px,4.4vw,36px);color:var(--teal)}
+.sec-head p{color:#3B5A5E;font-size:16px;margin-top:6px}
+.fungrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.fcard{background:var(--card);border-radius:28px;padding:0;overflow:hidden;box-shadow:0 10px 26px rgba(28,58,58,.12);transition:transform .25s,box-shadow .25s;border:4px solid transparent}
+.fcard:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 18px 36px rgba(28,58,58,.18)}
+.fcard .cov{height:150px;background:linear-gradient(160deg,var(--sky),var(--teal));position:relative;display:flex;align-items:center;justify-content:center}
+.fcard .cov img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.fcard .cov.loaded img{opacity:1}
+.fcard .cov .emoji{font-size:52px;position:relative;z-index:2;filter:drop-shadow(0 4px 6px rgba(0,0,0,.2))}
+.fcard .body{padding:16px 18px 20px}
+.fcard h3{font-size:18px;color:var(--ink)}
+.fcard p{font-size:13.8px;color:#4F6E6E;margin-top:6px}
+.fcard .where{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;background:#FFF3D6;color:var(--orange);border-radius:999px;padding:4px 12px}
+/* animal strip */
+.animals{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory}
+.amini{flex:0 0 150px;scroll-snap-align:center;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 8px 20px rgba(28,58,58,.1);text-align:center}
+.amini .cov{height:110px;background:linear-gradient(160deg,var(--green),var(--teal));position:relative}
+.amini .cov img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.amini .cov.loaded img{opacity:1}
+.amini p{padding:10px 6px;font-weight:600;font-size:13.5px}
+/* rules — kid friendly */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.rulec{border-radius:24px;padding:20px;color:#fff;position:relative;overflow:hidden}
+.rulec .emoji{font-size:38px;margin-bottom:8px;display:block}
+.rulec h3{font-size:17px;margin-bottom:4px}
+.rulec p{font-size:13.6px;opacity:.95}
+.r1{background:linear-gradient(150deg,#FF6F91,#FF8C42)}
+.r2{background:linear-gradient(150deg,#4AC6EA,#2EC4B6)}
+.r3{background:linear-gradient(150deg,#9D65C9,#6C5CE7)}
+.r4{background:linear-gradient(150deg,#6BCB77,#2EC4B6)}
+.r5{background:linear-gradient(150deg,#FFC93C,#FF8C42)}
+.r6{background:linear-gradient(150deg,#FF6F91,#9D65C9)}
+/* checklist / stickers */
+.checklist{background:var(--card);border-radius:28px;padding:22px;box-shadow:0 10px 26px rgba(28,58,58,.12)}
+.clist{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.citem{display:flex;align-items:center;gap:12px;background:#FFF9EC;border-radius:16px;padding:12px 14px;cursor:pointer;transition:.2s;border:2px solid transparent}
+.citem input{display:none}
+.citem .box{width:34px;height:34px;border-radius:10px;background:#fff;border:2.5px solid #E8DCC0;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:.2s}
+.citem input:checked ~ .box{background:var(--green);border-color:var(--green);color:#fff}
+.citem input:checked ~ span{text-decoration:line-through;opacity:.55}
+.citem:has(input:checked){background:#EAF9EC;border-color:var(--green)}
+.progress-wrap{background:#FFF3D6;border-radius:999px;height:16px;overflow:hidden;margin-top:16px}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--yellow),var(--orange));border-radius:999px;width:0%;transition:width .4s}
+.progress-txt{text-align:center;font-weight:600;margin-top:8px;color:var(--orange)}
+footer{text-align:center;padding:34px 20px;color:#7FA39C;font-size:13px}
+footer a{color:var(--teal);font-weight:600;text-decoration:none}
+@media(max-width:640px){section{padding:30px 0}}
+</style>
+</head>
+<body>
+<div class="rolebar"><div class="wrap">
+  <a class="home" href="index.html">🌴 Пхукет</a>
+  <a href="index.html">Гид</a>
+  <a href="mama.html">🤍 Мама</a>
+  <a class="act" href="rebenok.html">🦖 Ребёнок</a>
+  <a href="voditel.html">🚗 Водитель</a>
+  <a href="extrenno.html">🆘 Экстренно</a>
+</div></div>
+
+<header>
+  <span class="balloon" style="left:6%;top:10px;animation-delay:0s">🐠</span>
+  <span class="balloon" style="right:8%;top:30px;animation-delay:1.2s">🥥</span>
+  <span class="balloon" style="left:12%;bottom:-6px;animation-delay:2s">🐒</span>
+  <span class="balloon" style="right:14%;bottom:0;animation-delay:.6s">🦖</span>
+  <h1>Привет! Это твой остров 🌴</h1>
+  <p>Здесь живут слоны, рыбки-клоуны и очень вкусные манго. Смотри, что тебя ждёт!</p>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Куда пойти играть 🎢</h2><p>Выбери приключение на сегодня</p></div>
+    <div class="fungrid">
+      <div class="fcard"><div class="cov" data-cover="Andamanda water park Phuket"><span class="emoji">🌊</span></div><div class="body"><h3>Аквапарк Андаманда</h3><p>Огромные горки, солёный бассейн с волнами и целая тайская сказка вокруг!</p><span class="where">20 минут на машине</span></div></div>
+      <div class="fcard"><div class="cov" data-cover="Blue Tree Phuket lagoon"><span class="emoji">🤸</span></div><div class="body"><h3>Блю Три</h3><p>Прыгай в голубую лагуну, катайся на тарзанке и качелях над водой.</p><span class="where">40 минут на машине</span></div></div>
+      <div class="fcard"><div class="cov" data-cover="Dino Park mini golf Phuket"><span class="emoji">🦕</span></div><div class="body"><h3>Дино-парк</h3><p>Мини-гольф среди динозавров прямо у нас в Кароне — можно дойти пешком вечером!</p><span class="where">5 минут пешком</span></div></div>
+      <div class="fcard"><div class="cov" data-cover="aquarium fish tunnel"><span class="emoji">🐟</span></div><div class="body"><h3>Аквариум Aquaria</h3><p>Иди сквозь стеклянный тоннель прямо под акулами и скатами!</p><span class="where">30 минут, в Central</span></div></div>
+      <div class="fcard"><div class="cov" data-cover="elephant sanctuary bathing"><span class="emoji">🐘</span></div><div class="body"><h3>Слоновий приют</h3><p>Покорми слона бананом и облей его водой из ведра — слонам это очень нравится!</p><span class="where">30–40 минут</span></div></div>
+      <div class="fcard"><div class="cov" data-cover="Rawai Park Phuket kids"><span class="emoji">🎈</span></div><div class="body"><h3>Равай Парк</h3><p>Бассейн с пеной, батуты и шоу мыльных пузырей — целый день веселья.</p><span class="where">25 минут на машине</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#EFFBF7">
+  <div class="wrap">
+    <div class="sec-head"><h2>Кого ты можешь встретить 🐾</h2><p>Листай вправо →</p></div>
+    <div class="animals">
+      <div class="amini"><div class="cov" data-cover="clownfish reef"></div><p>🐠 Рыбка-клоун</p></div>
+      <div class="amini"><div class="cov" data-cover="long tailed macaque Thailand"></div><p>🐒 Обезьянка</p></div>
+      <div class="amini"><div class="cov" data-cover="gibbon Phuket rehabilitation"></div><p>🐵 Гиббон</p></div>
+      <div class="amini"><div class="cov" data-cover="sea turtle Thailand"></div><p>🐢 Морская черепаха</p></div>
+      <div class="amini"><div class="cov" data-cover="hornbill bird Thailand"></div><p>🦜 Птица-носорог</p></div>
+      <div class="amini"><div class="cov" data-cover="starfish shallow water"></div><p>⭐ Морская звезда</p></div>
+      <div class="amini"><div class="cov" data-cover="Asian elephant"></div><p>🐘 Слонёнок</p></div>
+      <div class="amini"><div class="cov" data-cover="hermit crab beach"></div><p>🦀 Рак-отшельник</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Правила моря 🌊</h2><p>Запомни — и море всегда будет другом</p></div>
+    <div class="rules">
+      <div class="rulec r1"><span class="emoji">🚩</span><h3>Красный флаг</h3><p>Если флаг красный — купаться нельзя! Море сегодня слишком сильное.</p></div>
+      <div class="rulec r2"><span class="emoji">🧜</span><h3>Плавай где мама видит</h3><p>Заходи в воду только там, где тебя видят взрослые — недалеко от берега.</p></div>
+      <div class="rulec r3"><span class="emoji">🎐</span><h3>Не трогай медуз</h3><p>Даже если медуза лежит на песке — она может ужалить. Смотри глазками, не руками.</p></div>
+      <div class="rulec r4"><span class="emoji">🩴</span><h3>Обувь для воды</h3><p>На камнях и ракушках надевай специальные тапочки — так не поранишь ножку.</p></div>
+      <div class="rulec r5"><span class="emoji">☀️</span><h3>Крем от солнца</h3><p>Солнце на Пхукете очень сильное — попроси маму намазать крем перед пляжем.</p></div>
+      <div class="rulec r6"><span class="emoji">🥥</span><h3>Не сиди под кокосом</h3><p>Кокосы падают! Расстилай коврик подальше от пальмы с орехами.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFF6E9">
+  <div class="wrap">
+    <div class="sec-head"><h2>Собери все наклейки! ⭐</h2><p>Отметь, что уже успел сделать на острове</p></div>
+    <div class="checklist">
+      <div class="clist">
+        <label class="citem"><input type="checkbox" data-k="c1"><span class="box">🐘</span><span>Покормил слона</span></label>
+        <label class="citem"><input type="checkbox" data-k="c2"><span class="box">🌊</span><span>Скатился с горки в аквапарке</span></label>
+        <label class="citem"><input type="checkbox" data-k="c3"><span class="box">🐠</span><span>Увидел рыбку под водой</span></label>
+        <label class="citem"><input type="checkbox" data-k="c4"><span class="box">🦕</span><span>Сыграл в мини-гольф с динозаврами</span></label>
+        <label class="citem"><input type="checkbox" data-k="c5"><span class="box">🥭</span><span>Попробовал манго со стики-райсом</span></label>
+        <label class="citem"><input type="checkbox" data-k="c6"><span class="box">🏖️</span><span>Построил замок из песка</span></label>
+        <label class="citem"><input type="checkbox" data-k="c7"><span class="box">🌅</span><span>Посмотрел закат на мысе</span></label>
+        <label class="citem"><input type="checkbox" data-k="c8"><span class="box">🐒</span><span>Увидел настоящую обезьяну</span></label>
+        <label class="citem"><input type="checkbox" data-k="c9"><span class="box">🏮</span><span>Запустил фонарик (Лой Кратонг)</span></label>
+        <label class="citem"><input type="checkbox" data-k="c10"><span class="box">🎈</span><span>Попрыгал в бассейне с пеной</span></label>
+      </div>
+      <div class="progress-wrap"><div class="progress-bar" id="pbar"></div></div>
+      <div class="progress-txt" id="ptxt">Начни собирать наклейки!</div>
+    </div>
+  </div>
+</section>
+
+<footer>Это часть большого гида «Пхукет из Карона» 🌴 · <a href="index.html">все страницы</a> · <a href="mama.html">страница для мамы</a></footer>
+
+<script>
+const CACHE={};
+async function commons(q,limit=3){
+  const key=q+'|'+limit;
+  if(CACHE[key])return CACHE[key];
+  try{
+    const u='https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*'
+      +'&generator=search&gsrnamespace=6&gsrlimit='+limit
+      +'&gsrsearch='+encodeURIComponent(q)
+      +'&prop=imageinfo&iiprop=url&iiurlwidth=700';
+    const d=await(await fetch(u)).json();
+    const pages=Object.values((d.query&&d.query.pages)||{});
+    pages.sort((a,b)=>(a.index||0)-(b.index||0));
+    const items=pages.map(p=>p.imageinfo&&p.imageinfo[0]).filter(Boolean)
+      .filter(i=>/\.(jpe?g)$/i.test(i.url||'')).map(i=>i.thumburl||i.url);
+    CACHE[key]=items;return items;
+  }catch(e){return[]}
+}
+document.querySelectorAll('[data-cover]').forEach(async el=>{
+  const items=await commons(el.dataset.cover,3);
+  if(!items.length)return;
+  const img=document.createElement('img');img.loading='lazy';img.alt='';
+  img.onload=()=>el.classList.add('loaded');
+  img.src=items[0];
+  el.appendChild(img);
+});
+/* чек-лист со звёздочками, сохраняется локально если получится */
+const boxes=[...document.querySelectorAll('.citem input')];
+function loadState(){try{return JSON.parse(localStorage.getItem('phuket_kid_checklist')||'{}')}catch(e){return{}}}
+function saveState(s){try{localStorage.setItem('phuket_kid_checklist',JSON.stringify(s))}catch(e){}}
+let state=loadState();
+boxes.forEach(b=>{if(state[b.dataset.k])b.checked=true;});
+function update(){
+  const done=boxes.filter(b=>b.checked).length;
+  const pct=Math.round(done/boxes.length*100);
+  document.getElementById('pbar').style.width=pct+'%';
+  const t=document.getElementById('ptxt');
+  t.textContent = done===0 ? 'Начни собирать наклейки!' : done===boxes.length ? '🎉 Все наклейки собраны — ты герой Пхукета!' : done+' из '+boxes.length+' — так держать!';
+}
+boxes.forEach(b=>b.addEventListener('change',()=>{
+  state[b.dataset.k]=b.checked;saveState(state);update();
+}));
+update();
+</script>
+</body>
+</html>
